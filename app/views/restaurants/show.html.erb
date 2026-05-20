@@ -16,3 +16,10 @@
 </ul>
 
 <%= link_to "Add new review", new_restaurant_review_path(@restaurant) %>
+
+<h2>New review for <%= @restaurant.name %></h2>
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :rating, collection: (0..5) %>
+  <%= f.input :content %>
+  <%= f.submit %>
+<% end %>
