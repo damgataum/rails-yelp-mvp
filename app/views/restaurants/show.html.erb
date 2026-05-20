@@ -3,4 +3,15 @@
 <p>Address: <%= @restaurant.address %></p>
 <p>Phone number: <%= @restaurant.phone_number %></p>
 
+<h2>Reviews</h2>
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+    <li>
+      <%= "⭐️"*review.rating %>
+      <%= review.content %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Add new review", new_restaurant_review_path(@restaurant) %>
 <%= link_to "Back to all restaurants", restaurants_path %>
