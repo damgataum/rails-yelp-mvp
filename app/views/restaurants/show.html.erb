@@ -1,3 +1,5 @@
+<%= render "restaurants/navbar" %>
+
 <h1>Restaurant: <%= @restaurant.name %></h1>
 <p>Category: <%= @restaurant.category %></p>
 <p>Address: <%= @restaurant.address %></p>
@@ -14,4 +16,3 @@
 </ul>
 
 <%= link_to "Add new review", new_restaurant_review_path(@restaurant) %>
-<%= link_to "Back to all restaurants", restaurants_path %>
